@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+    
+    <meta charset="utf-8">
+
+  <base href="https://editor.p5js.org/purveshbhele/present/lSIRjAwet/"><style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+</style></head>
+  <body>
+    <script>var hr,mn,sc;
+var hrangle,mnangle,scangle;
+
+
+function setup() {
+  createCanvas(400, 400);
+  angleMode(DEGREES);
+}
+
+function draw() {
+  background(0);
+  translate(200,200);
+  rotate(-90);
+  hr=hour();
+  mn=minute();
+  sc=second();
+  scangle=map(sc,0,60,0,360);
+  mnangle=map(mn,0,60,0,360);
+  hrangle=map(hr%12,0,12,0,360);
+  push();
+  rotate(scangle);
+  stroke("red");
+  strokeWeight(7);
+  line(0,0,100,0);
+  pop();
+  push();
+  rotate(mnangle);
+  stroke("green");
+  strokeWeight(7);
+  line(0,0,75,0);
+  pop();
+  push();
+  rotate(hrangle);
+  stroke("blue");
+  strokeWeight(7);
+  line(0,0,50,0);
+  pop();
+  stroke(255,0,255);
+  point(0,0);
+  strokeWeight(10);
+  noFill();
+  stroke("red");
+  arc(0,0,300,300,0,scangle);
+  stroke("green");
+  arc(0,0,280,280,0,mnangle);
+  stroke("blue");
+  arc(0,0,260,260,0,hrangle);
+}
+</script>
+  
+
+</body></html>
